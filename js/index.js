@@ -7,8 +7,13 @@ const subtotals = document.querySelectorAll(".subtotal >span");
 console.log(subtotals[0].textContent);
 const products = document.querySelectorAll(".product");
 const totalVal = document.getElementById("total-value");
+const removeBtns = document.querySelectorAll(".btn-remove");
+const tbody = document.querySelector("tbody");
 // calculateAll();
-
+/**
+ * 
+ * @param {object} product 
+ */
 function updateSubtotal(product) {
   let priceVal = product.querySelector(".price > span").textContent;
   let quantityVal = product.querySelector(".quantity >input").value;
@@ -40,11 +45,15 @@ function calculateAll() {
   totalVal.querySelector("span").textContent = allTotal;
 }
 // ITERATION 4
-
+/**
+ *  remove one tr of table
+ * @param {object} event 
+ */
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log("The target in remove is:", target);
   //... your code goes here
+  const target = event.currentTarget;
+  let tr = target.parentNode.parentNode;
+  tbody.removeChild(tr);
 }
 
 // ITERATION 5
@@ -56,6 +65,9 @@ function createProduct() {
 window.addEventListener("load", () => {
   const calculatePricesBtn = document.getElementById("calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
+  for (let i = 0; i < removeBtns.length; i++) {
+    removeBtns[i].addEventListener("click", (ev) => removeProduct(ev));
+  }
 
   //... your code goes here
 });
