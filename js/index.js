@@ -1,10 +1,23 @@
 // ITERATION 1
+const prices = document.querySelectorAll('.price > span');
+console.log(prices[0].textContent)
+const quantities = document.querySelectorAll('.quantity >input')
+console.log(quantities[0].value)
+const subtotals = document.querySelectorAll('.subtotal >span')
+console.log(subtotals[0].textContent)
+const product = document.querySelector('.product')
+
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
+    
+    
+    }
 
   //... your code goes here
-}
+updateSubtotal(product)
+console.log(product)
+
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
