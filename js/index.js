@@ -2,7 +2,6 @@
 const prices = document.querySelectorAll(".price > span");
 const quantities = document.querySelectorAll(".quantity >input");
 const subtotals = document.querySelectorAll(".subtotal >span");
-const products = document.querySelectorAll(".product");
 const totalVal = document.getElementById("total-value");
 const tbody = document.querySelector("tbody");
 const createEl = document.querySelector(".create-product");
@@ -24,6 +23,7 @@ function updateSubtotal(product) {
 // updateSubtotal(product);
 
 function calculateAll() {
+  const products = document.querySelectorAll(".product");
   // ITERATION 2
   let allTotal = 0;
   for (let i = 0; i < products.length; i++) {
@@ -117,6 +117,7 @@ window.addEventListener("load", () => {
   createEl.querySelector("button").addEventListener("click", createProduct);
   //... your code goes here
 });
+
 function addRemoveEvent() {
   const removeBtns = document.querySelectorAll(".btn-remove");
   for (let i = 0; i < removeBtns.length; i++) {
